@@ -1,0 +1,96 @@
+<DOCUMENT filename="predict.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-green-700 text-white py-4 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">House Prediction with ML</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-green-200">Home</a></li>
+                    <li><a href="#about" class="hover:text-green-200">About</a></li>
+                    <li><a href="/predict" class="hover:text-green-200">Model</a></li>
+                    <li><a href="#contact" class="hover:text-green-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+    <section class="text-center">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4">House Price Prediction</h2>
+        <form method="POST" action="/predict" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+            
+            <div class="mb-4">
+                <label for="MedInc" class="block text-gray-700 text-sm font-bold mb-2">Median Income (MedInc):</label>
+                <input type="number" id="MedInc" name="MedInc" step="0.01" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="HouseAge" class="block text-gray-700 text-sm font-bold mb-2">House Age (HouseAge):</label>
+                <input type="number" id="HouseAge" name="HouseAge" step="0.01" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="AveRooms" class="block text-gray-700 text-sm font-bold mb-2">Average Rooms (AveRooms):</label>
+                <input type="number" id="AveRooms" name="AveRooms" step="0.01" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="AveBedrms" class="block text-gray-700 text-sm font-bold mb-2">Average Bedrooms (AveBedrms):</label>
+                <input type="number" id="AveBedrms" name="AveBedrms" step="0.01" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="Population" class="block text-gray-700 text-sm font-bold mb-2">Population:</label>
+                <input type="number" id="Population" name="Population" step="0.01" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="AveOccup" class="block text-gray-700 text-sm font-bold mb-2">Average Occupancy (AveOccup):</label>
+                <input type="number" id="AveOccup" name="AveOccup" step="0.01" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="Latitude" class="block text-gray-700 text-sm font-bold mb-2">Latitude:</label>
+                <input type="number" id="Latitude" name="Latitude" step="0.0001" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label for="Longitude" class="block text-gray-700 text-sm font-bold mb-2">Longitude:</label>
+                <input type="number" id="Longitude" name="Longitude" step="0.0001" required 
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <button type="submit" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Predict
+            </button>
+        </form>
+        <p class="mt-4 text-lg text-gray-600">{{ prediction_text }}</p>
+    </section>
+</main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 House Prediction with ML. All rights reserved.</p>
+            <p class="mt-2">Contact us: <a href="mailto:info@houseprediction.com" class="underline hover:text-blue-300">info@houseprediction.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+</DOCUMENT>
